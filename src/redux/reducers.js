@@ -1,19 +1,53 @@
 import { combineReducers } from 'redux'
+import initialState from '../redux/state'
 
-const user = (state = null) => state
+const currentUser = ( state = initialState, action ) => {
+    switch(action.type){
+        case 'LOGIN':
+        return {
+            ...state,
+            username: action.value,
+            loggedIn: true
+        }
 
-// add switch statements in here
-const cars = (state = [], action) => {
-    console.log(action);
-    switch(action.type) {
-        case 'ADD_CAR':
-            return [ ...state, action.value ]
-        case 'REMOVE_CAR':
-            const newState = [ ...state ]
-            return newState.splice(action.value, 1)
+        case 'LOGOUT':
+            return {
+                ...state,
+                username: action.value,
+                loggedIn: false
+            }
+
         default:
-            return state
+        return state
     }
 }
 
-export default combineReducers({ user, cars })
+const activeElements = ( state= initialState, action ) => {
+    switch(action.type) {
+        case 'NAV_LEFT':
+            let navLeft = !state.navLeft
+                return {
+                    ...state,
+                    navLeft: navLeft
+                }
+        case 'NAV_RIGHT':
+                let navRight = !state.navRight
+                    return {
+                        ...state,
+                        navRight: navRight
+                    }
+        case 'NAV_CLOSE':
+                return {
+                    ...state,
+                    navLeft: false,
+                    navRight: false,
+                }
+        default: 
+                return state
+    }
+}
+
+export default combineReducers({
+    currentUser,
+    activeElements
+})

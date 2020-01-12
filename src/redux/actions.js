@@ -1,15 +1,31 @@
-import { connect } from "react-redux";
-
-export const addCar = Car => {
+export const login = ( username ) => {
     return {
-        type: "ADD_CAR",
-        value: Car
+        type: 'LOGIN',
+        value: username
     }
 }
 
-export const removeCar = index => {
+export const logout = () => {
     return {
-        type: "REMOVE_CAR",
-        value: index
+        type: 'LOGOUT'
+        value: 'Guest'
+    }
+}
+
+export const activateNavLeft = () => {
+    return {
+        type: 'NAV_LEFT'
+    }
+}
+
+export const activeNavRight = () => {
+    return {
+        type: 'NAV_RIGHT'
+    }
+}
+
+export const closeNavs = () => {
+    return {
+        type: 'NAV_CLOSE'
     }
 }

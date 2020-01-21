@@ -1,4 +1,5 @@
 import React from "react";
+import "./Quizmain.css";
 //Displays the answer options
 
 function AnswerOption(props) {

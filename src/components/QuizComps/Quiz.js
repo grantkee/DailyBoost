@@ -2,6 +2,7 @@ import React from "react";
 import Question from "./Question";
 import QuestionCount from "./QuestionCount";
 import AnswerOption from "./AnswerOption";
+import "./Quizmain.css";
 
 function Quiz(props) {
 	function renderAnswerOptions(key) {

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Quizmain.css";
 
 //receives two props, counter and total from a container component.
 

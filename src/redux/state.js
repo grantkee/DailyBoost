@@ -3,7 +3,6 @@ export default {
       username: 'guest',
          loggedIn: false,
    },
-
    quizQuestions: [
       {
          question: "What franchise would you rather play a game from?",

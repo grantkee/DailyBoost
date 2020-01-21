@@ -110,7 +110,7 @@ class Quizmain extends Component {
 				answerOptions={this.state.answerOptions}
 				questionId={this.state.questionId}
 				question={this.state.question}
-				// questionTotal={this.props.quizQuestions.length}
+				questionTotal={this.props.quizQuestions.length}
 				onAnswerSelected={this.handleAnswerSelected}
 			/>
 		);
